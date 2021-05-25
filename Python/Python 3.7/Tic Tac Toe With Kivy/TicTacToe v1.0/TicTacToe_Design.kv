@@ -1,0 +1,147 @@
+WindowManager:
+    PlayWindow:
+    WinnerWindow:
+
+<PlayWindow>:
+    name: "play_window"
+    id: play_window
+    button_0: button_0
+    button_1: button_1
+    button_2: button_2
+    button_3: button_3
+    button_4: button_4
+    button_5: button_5
+    button_6: button_6
+    button_7: button_7
+    button_8: button_8
+
+    GridLayout:
+        cols: 3
+        Button:
+            id: button_0
+            text: "None"
+            color: (1,1,1,1)
+            font_size: 30
+            disabled_color: (1,1,1,1)
+            background_color: (1,1,1,1)
+            disabled: False
+            on_press: button_0.text = root.turn
+            on_press: button_0.disabled = True
+            on_release: root.flip_player()
+            on_release: button_0.background_color = (0,0,0,0)
+
+        Button:
+            id: button_1
+            text: "None"
+            color: (1,1,1,1)
+            font_size: 30
+            disabled_color: (1,1,1,1)
+            background_color: (1,1,1,1)
+            disabled: False
+            on_press: button_1.text = root.turn
+            on_press: button_1.disabled = True
+            on_release: root.flip_player()
+            on_release: button_1.background_color = (0,0,0,0)
+
+        Button:
+            id: button_2
+            text: "None"
+            color: (1,1,1,1)
+            font_size: 30
+            disabled_color: (1,1,1,1)
+            background_color: (1,1,1,1)
+            disabled: False
+            on_press: button_2.text = root.turn
+            on_press: button_2.disabled = True
+            on_release: root.flip_player()
+            on_release: button_2.background_color = (0,0,0,0)
+
+        Button:
+            id: button_3
+            text: "None"
+            color: (1,1,1,1)
+            font_size: 30
+            disabled_color: (1,1,1,1)
+            background_color: (1,1,1,1)
+            disabled: False
+            on_press: button_3.text = root.turn
+            on_press: button_3.disabled = True
+            on_release: root.flip_player()
+            on_release: button_3.background_color = (0,0,0,0)
+
+        Button:
+            id: button_4
+            text: "None"
+            color: (1,1,1,1)
+            font_size: 30
+            disabled_color: (1,1,1,1)
+            background_color: (1,1,1,1)
+            disabled: False
+            on_press: button_4.text = root.turn
+            on_press: button_4.disabled = True
+            on_release: root.flip_player()
+            on_release: button_4.background_color = (0,0,0,0)
+
+        Button:
+            id: button_5
+            text: "None"
+            color: (1,1,1,1)
+            font_size: 30
+            disabled_color: (1,1,1,1)
+            background_color: (1,1,1,1)
+            disabled: False
+            on_press: button_5.text = root.turn
+            on_press: button_5.disabled = True
+            on_release: root.flip_player()
+            on_release: button_5.background_color = (0,0,0,0)
+
+        Button:
+            id: button_6
+            text: "None"
+            color: (1,1,1,1)
+            font_size: 30
+            disabled_color: (1,1,1,1)
+            background_color: (1,1,1,1)
+            disabled: False
+            on_press: button_6.text = root.turn
+            on_press: button_6.disabled = True
+            on_release: root.flip_player()
+            on_release: button_6.background_color = (0,0,0,0)
+
+        Button:
+            id: button_7
+            text: "None"
+            color: (1,1,1,1)
+            font_size: 30
+            disabled_color: (1,1,1,1)
+            background_color: (1,1,1,1)
+            disabled: False
+            on_press: button_7.text = root.turn
+            on_press: button_7.disabled = True
+            on_release: root.flip_player()
+            on_release: button_7.background_color = (0,0,0,0)
+
+        Button:
+            id: button_8
+            text: "None"
+            color: (1,1,1,1)
+            font_size: 30
+            disabled_color: (1,1,1,1)
+            background_color: (1,1,1,1)
+            disabled: False
+            on_press: button_8.text = root.turn
+            on_press: button_8.disabled = True
+            on_release: root.flip_player()
+            on_release: button_8.background_color = (0,0,0,0)
+
+<WinnerWindow>:
+    name: "winner_window"
+    win_label: win_label
+    GridLayout:
+        cols: 1
+        Label:
+            id: win_label
+            text: "END"
+        Button:
+            text: "Back To Playing"
+            on_release: root.back_to_playing()

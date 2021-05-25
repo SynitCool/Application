@@ -1,0 +1,112 @@
+<DataAudio@Button>:
+    on_press:
+        window_manager = self.parent.parent.parent.parent.parent
+        window_manager.to_info_window(self.text, self.PATH)
+
+<WindowManager>:
+    main_rv: main_rv
+
+    check_audio: check_audio
+    check_play: check_play
+    check_stop: check_stop
+    check_loop: check_loop
+    check_not_loop: check_not_loop
+    back_button: back_button
+    audio_layout: audio_layout
+    button_audio_layout: button_audio_layout
+
+    add_name: add_name
+    add_path: add_path
+    check_data: check_data
+
+    SplashWindow:
+        name: "splash_window"
+        Label:
+            text: "--- Loading ---"
+    MainWindow:
+        name: "main_window"
+        BoxLayout:
+            orientation: 'vertical'
+            GridLayout:
+                cols: 1
+                size_hint_y: None
+                Button:
+                    text: "Add Audio"
+                    on_release: root.to_add_data_window()
+
+            RecycleView:
+                id: main_rv
+                viewclass: 'DataAudio'
+                RecycleBoxLayout:
+                    orientation: 'vertical'
+                    size_hint_y: None
+                    height: self.minimum_height
+                    default_size_hint: 1, None
+                    default_size: 30, 30
+                    spacing: 15
+                    padding: 50
+
+    AddDataWindow:
+        name: "add_data_window"
+        GridLayout:
+            cols: 1
+            Label:
+                text: ""
+            GridLayout:
+                cols: 2
+                size_hint: 1, None
+                Label:
+                    text: "Audio Name"
+                TextInput:
+                    id: add_name
+                    multiline: False
+                Label:
+                    text: "Audio PATH"
+                TextInput:
+                    id: add_path
+                    multiline: False
+            Button:
+                text: "Add Audio"
+                on_release: root.add_audio(add_name.text, add_path.text)
+            Button:
+                text: "Back To Main Window"
+                on_release: root.to_main_window()
+            Label:
+                id: check_data
+                text: ""
+            Label:
+                text: ""
+
+    InfoWindow:
+        name: "info_window"
+        GridLayout:
+            id: audio_layout
+            cols: 1
+            Label:
+                id: check_audio
+                text: "Audio is playing"
+
+            GridLayout:
+                id: button_audio_layout
+                cols: 5
+                spacing: 5
+                Button:
+                    id: back_button
+                    text: "Back"
+                    on_press: root.to_main_window()
+                Button:
+                    id: check_play
+                    text: "Play"
+                    on_press: root.play_audio()
+                Button:
+                    id: check_stop
+                    text: "Stop"
+                    on_press: root.stop_audio()
+                Button:
+                    id: check_loop
+                    text: "Loop"
+                    on_press: root.loop_audio()
+                Button:
+                    id: check_not_loop
+                    text: "Not Loop"
+                    on_press: root.not_loop_audio()
