@@ -13,7 +13,7 @@
 
 LiquidCrystal_I2C lcd(0x27,16,2);  
 
-int duration = 5;
+int duration = 20;
 
 char corrOpt = 'A';
 
@@ -208,7 +208,7 @@ void game() {
     hs = score;
   }
 
-  for (int i = 0; i <= 20; i++) {
+  for (int i = 0; i <= duration; i++) {
     lcd.setCursor(0,0);
     lcd.print(i);
     duration = i;
